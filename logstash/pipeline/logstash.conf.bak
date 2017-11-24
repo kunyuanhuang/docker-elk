@@ -7,7 +7,9 @@ input {
 ## Add your filters / logstash plugins configuration here
 
 output {
+     if [type] == "logstash" {
 	elasticsearch {
 		hosts => "elasticsearch:9200"
 	}
+     }
 }
